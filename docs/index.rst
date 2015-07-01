@@ -41,6 +41,24 @@ Searching and filtering of records
 
    matching.rst
 
+Dependencies
+------------
+
+.. toctree::
+
+   requirements.rst
+
+Upgrading
+---------
+
+.. toctree::
+
+   upgrades.rst
+
+License
+-------
+
+GPL v.2+
 
 
 Indices and tables

@@ -1,7 +1,10 @@
 *~
 *.pyc
+env*/
 .coverage*
 t.sh
 htmlcov
 docs/_build
 docs/examples/simplepyged
+*.egg-info
+dist/

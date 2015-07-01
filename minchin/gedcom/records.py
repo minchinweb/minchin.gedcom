@@ -2,6 +2,7 @@
 #
 # Gedcom 5.5 Parser
 #
+# Copyright (C) 2015 William Minchin
 # Copyright (C) 2010 Nikola Škorić (nskoric [ at ] gmail.com)
 #
 # This program is free software; you can redistribute it and/or
@@ -23,8 +24,9 @@
 # To contact the author, see http://github.com/dijxtra/simplepyged
 
 # Global imports
-import string
-from events import Event
+from __future__ import absolute_import
+# import string
+from .events import Event
 
 class Line:
     """ Line of a GEDCOM file
@@ -277,9 +279,9 @@ class Individual(Record):
                 # some older Gedcom files don't use child tags but instead
                 # place the name in the value of the NAME tag
                 if e.value() != "":
-                    name = string.split(e.value(),'/')
-                    first = string.strip(name[0])
-                    last = string.strip(name[1]) if len(name) > 1 else None
+                    name = e.value().split('/')
+                    first = name[0].strip()
+                    last = name[1].strip() if len(name) > 1 else None
                 else:
                     for c in e.children_lines():
                         if c.tag() == "GIVN":
@@ -329,7 +331,7 @@ class Individual(Record):
             return -1
 
         try:
-            date = int(string.split(self.birth().date)[-1])
+            date = int(self.birth().date.split()[-1])
             return date
         except ValueError:
             return -1
@@ -361,7 +363,7 @@ class Individual(Record):
             return -1
 
         try:
-            date = int(string.split(self.death().date)[-1])
+            date = int(self.death().date.split()[-1])
             return date
         except ValueError:
             return -1

@@ -2,6 +2,7 @@
 #
 # Gedcom 5.5 Parser
 #
+# Copyright (C) 2015 William Minchin
 # Copyright (C) 2010 Nikola Škorić (nskoric [ at ] gmail.com)
 # Copyright (C) 2005 Daniel Zappala (zappala [ at ] cs.byu.edu)
 # Copyright (C) 2005 Brigham Young University
@@ -24,7 +25,9 @@
 #
 # To contact the author, see http://github.com/dijxtra/simplepyged
 
-from records import Individual
+from __future__ import absolute_import
+
+from .records import Individual
 
 class MatchIndividual():
     """ Class for determining whether an Individual matches certain criteria """
@@ -81,7 +84,6 @@ class MatchIndividual():
         * deathrange=[year1-year2]
         * marriage=[year]
         * marriagerange=[year1-year2]
-        
         """
 
         # error checking on the criteria
@@ -173,14 +175,16 @@ class MatchList:
     the list for which given method returns True.
 
     Example:
-.. code-block:: python
 
-    gedcom = Gedcom(somefile)
-    list = gedcom.individual_list()
-    individual = gedcom.get_individual(xref)
+    .. code-block:: python
     
-    if MatchIndividual(individual).given_match(some_name):
-        individual in MatchList(list).given_match(some_name) # this line returns True
+        gedcom = Gedcom(somefile)
+        list = gedcom.individual_list()
+        individual = gedcom.get_individual(xref)
+        
+        if MatchIndividual(individual).given_match(some_name):
+            individual in MatchList(list).given_match(some_name) # this line returns True
+
     """
 
     def __init__(self, record_list):

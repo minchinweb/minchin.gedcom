@@ -2,7 +2,7 @@ Gedcom
 ======
 
 
-.. automodule:: gedcom
+.. automodule:: minchin.gedcom.gedcom
 
 .. autoclass:: Gedcom
    :members:

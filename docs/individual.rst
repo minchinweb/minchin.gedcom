@@ -1,7 +1,7 @@
 Individual
 ==========
 
-.. automodule:: records
+.. automodule:: minchin.gedcom.records
 
 .. autoclass:: Individual
    :members:

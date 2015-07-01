@@ -1,5 +1,5 @@
-simplepyged - A simple Python GEDCOM parser
-===========================================
+minchin.gedcom - A simple Python GEDCOM parser
+==============================================
 
 Status of parser
 ----------------
@@ -17,7 +17,7 @@ let me know and I'll try to fix it.
 Licence
 --------
 
-All code is licenced under GPL v.3 or newer.
+All code is licenced under GPL v.2 or newer.
 
 First commit to this repository was based on source from here:
 http://ilab.cs.byu.edu/cs460/2006w/assignments/program1.html

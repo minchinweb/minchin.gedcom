@@ -1,13 +1,13 @@
 import unittest
 import os
-from gedcom import *
-from matches import *
+from minchin.gedcom.gedcom import *
+from minchin.gedcom.matches import *
 
 class McIntyreTest(unittest.TestCase):
     """Unit tests for matches.py using mcintyre.ged."""
 
     def setUp(self):
-        self.g = Gedcom(os.path.abspath('test/mcintyre.ged'))
+        self.g = Gedcom(os.path.abspath('test/sample_gedcoms/mcintyre.ged'))
 
     def test_matches(self):
         """ Testing class MatchIndividual """

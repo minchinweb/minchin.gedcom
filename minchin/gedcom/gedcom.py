@@ -2,6 +2,7 @@
 #
 # Gedcom 5.5 Parser
 #
+# Copyright (C) 2015 William Minchin
 # Copyright (C) 2010 Nikola Škorić (nskoric [ at ] gmail.com)
 # Copyright (C) 2005 Daniel Zappala (zappala [ at ] cs.byu.edu)
 # Copyright (C) 2005 Brigham Young University
@@ -27,8 +28,11 @@
 # __all__ = ["Gedcom", "Line", "GedcomParseError"]
 
 # Global imports
+from __future__ import print_function, absolute_import
 import string
-from records import *
+from .records import *
+
+__version__ = '0.2.0-alpha3'
 
 class Gedcom:
     """ Gedcom parser
@@ -46,7 +50,7 @@ class Gedcom:
 
     """
 
-    def __init__(self,file):
+    def __init__(self, file):
         """ Initialize a Gedcom parser. You must supply a Gedcom file.
         """
         self._record_dict = {}
@@ -106,32 +110,32 @@ class Gedcom:
 
     # Private methods
 
-    def _parse(self,file):
+    def _parse(self, file):
         # open file
         # go through the lines
-        f = open(file)
-        number = 1
-        for line in f.readlines():
-            self._parse_line(number,line.decode("utf-8-sig"))
-            number += 1
+        with open(file, encoding='utf-8-sig') as f:
+            number = 1
+            for line in f.readlines():
+                self._parse_line(number, line)
+                number += 1
 
         for e in self.line_list():
             e._init()
 
-    def _parse_line(self,number,line):
+    def _parse_line(self, number, line):
         # each line should have: Level SP (Xref SP)? Tag (SP Value)? (SP)? NL
         # parse the line
         tail = line.strip()
 
         if tail == '':
-            self._error(number,"Empty line")
+            self._error(number, "Empty line")
 
         try:
             [head, tail] = tail.split(' ', 1)
         except ValueError:
-            self._error(number,"Incomplete line")
+            self._error(number, "Incomplete line")
 
-        l = self._level(number,head) #retireve line level
+        l = self._level(number, head) #retireve line level
 
         try:
             [head, tail] = tail.split(' ', 1)
@@ -229,7 +233,7 @@ class Gedcom:
 
     def _print(self):
         for e in self.line_list:
-            print string.join([unicode(e.level()),e.xref(),e.tag(),e.value()])
+            print(string.join([unicode(e.level()),e.xref(),e.tag(),e.value()]))
 
 
 class GedcomParseError(Exception):

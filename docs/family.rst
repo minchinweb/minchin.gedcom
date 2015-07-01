@@ -1,7 +1,7 @@
 Family
 ======
 
-.. automodule:: records
+.. automodule:: minchin.gedcom.records
 
 .. autoclass:: Family
    :members:

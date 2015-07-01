@@ -2,7 +2,7 @@ MatchIndividual and MatchList
 =============================
 
 
-.. automodule:: matches
+.. automodule:: minchin.gedcom.matches
 
 .. autoclass:: MatchIndividual
    :members:

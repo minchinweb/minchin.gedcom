@@ -1,13 +1,14 @@
+from __future__ import print_function
 import unittest
 import os
-from gedcom import *
+from minchin.gedcom.gedcom import *
 
 
 class McIntyreTest(unittest.TestCase):
     """Unit tests for simplepyged using mcintyre.ged."""
 
     def setUp(self):
-        self.g = Gedcom(os.path.abspath('test/mcintyre.ged'))
+        self.g = Gedcom(os.path.abspath('test/sample_gedcoms/mcintyre.ged'))
 
     def test_parser(self):
         """Check if parser collected all records"""
@@ -23,11 +24,11 @@ class McIntyreTest(unittest.TestCase):
             if e.value().startswith('@'):
                 f = self.g.record_dict().get(e.value(),None)
                 if f == None:
-                    print e.value()
+                    print(e.value())
 
         for e in self.g.line_list():
             if e.xref() == "@I99@":
-                print e.name()
+                print(e.name())
 
 
 if __name__ == '__main__':

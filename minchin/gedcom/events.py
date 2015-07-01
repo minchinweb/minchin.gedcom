@@ -2,6 +2,7 @@
 #
 # Gedcom 5.5 Parser
 #
+# Copyright (C) 2015 William Minchin
 # Copyright (C) 2010 Nikola Škorić (nskoric [ at ] gmail.com)
 #
 # This program is free software; you can redistribute it and/or
@@ -22,7 +23,7 @@
 #
 # To contact the author, see http://github.com/dijxtra/simplepyged
 
-# Global imports
+
 class Event:
     """ Class represeting an event """
     def __init__(self, line):

@@ -1,0 +1,7 @@
+include minchin/*.py
+include minchin/gedcom/*.py
+include README.rst
+include CHANGELOG.rst
+include LICENSE
+include test/*.py
+include test/sample_gedcoms/*.ged

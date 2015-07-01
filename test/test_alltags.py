@@ -1,13 +1,13 @@
 import unittest
 import os
-from gedcom import *
+from minchin.gedcom.gedcom import *
 
 
 class AllTagsTest(unittest.TestCase):
     """Unit tests for simplepyged using the torture GED file."""
 
     def setUp(self):
-        self.g = Gedcom(os.path.abspath('test/TGC55CLF.utf-8.ged'))
+        self.g = Gedcom(os.path.abspath('test/sample_gedcoms/TGC55CLF.utf-8.ged'))
 
     def test_parser(self):
         """Check if parser collected all records"""

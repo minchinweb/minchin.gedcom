@@ -7,7 +7,7 @@ class McIntyreTest(unittest.TestCase):
     """Unit tests for records.py using mcintyre.ged."""
 
     def setUp(self):
-        self.g = Gedcom(os.path.abspath('test/mcintyre.ged'))
+        self.g = Gedcom(os.path.abspath('test/sample_gedcoms/mcintyre.ged'))
 
     def test_individual(self):
         """Testing class Individual"""
@@ -101,7 +101,7 @@ class WrightTest(unittest.TestCase):
     """Unit tests for records.py using wright.ged."""
 
     def setUp(self):
-        self.g = Gedcom(os.path.abspath('test/wright.ged'))
+        self.g = Gedcom(os.path.abspath('test/sample_gedcoms/wright.ged'))
 
     def test_individual(self):
         """Testing class Individual"""
