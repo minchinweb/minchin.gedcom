@@ -32,7 +32,6 @@ from __future__ import print_function, absolute_import
 import string
 from .records import *
 
-__version__ = '0.2.0-alpha3'
 
 class Gedcom:
     """ Gedcom parser
