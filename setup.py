@@ -22,7 +22,7 @@ setup(
     keywords='gedcom, genealogy',
     author='W. Minchin',
     author_email='w_minchin@hotmail.com',
-    url='https://github.com/dijxtra/simplepyged/',
+    url='https://github.com/minchinweb/minchin.gedcom/',
     packages=find_packages(),
     namespace_packages = ['minchin'],
     include_package_data = True,

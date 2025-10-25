@@ -1,4 +1,3 @@
-include minchin/*.py
 include minchin/gedcom/*.py
 include README.rst
 include CHANGELOG.rst
